@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex03_spread.html -->
+
+    <script>
+
+        //spread 연산자
+        //- 배열이나 객체를 편쳐서 개별 요소를 전달할 때 사용
+
+        let nums1 = [ 10, 20, 30 ];
+        let nums2 = [ 40, 50, 60 ];
+
+        //[ 10, 20, 30, 40, 50, 60 ]
+        //[ 40, 10, 20, 30, 50, 60 ]
+
+        //let nums3 = [ 40, nums1[0], nums1[1], nums1[2], 50, 60 ];
+        let nums3 = [ 40, ...nums1, 50, 60 ];
+
+        console.log(nums3);
+
+        console.clear();
+
+        console.log(nums1);     //[10, 20, 30]
+
+        console.log(...nums1);  //10 20 30
+
+
+        let nums4 = [ ...nums1, ...nums2 ];
+        console.log(nums4); //[10, 20, 30, 40, 50, 60]
+
+
+
+        let p1 = {
+            name: '강아지',
+            age: 3
+        };
+
+        //p1에 address 추가 > p2 생성
+        // let p2 = {
+        //     name: p1.name,
+        //     age: p1.age,
+        //     address: '서울시'
+        // };
+
+        let p2 = {
+            ...p1,
+            address: '서울시'
+        };
+
+        //console.log(...p1);
+        console.log(p2);
+
+
+    </script>
+
+</body>
+</html>

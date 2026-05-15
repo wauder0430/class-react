@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex04_rest.html -->
+
+    <script>
+
+        //rest 파라미터
+        //- 매개변수 앞에 ...
+
+        function sum(...numbers) {
+            console.log(numbers); //배열
+        }
+
+        sum(10, 20);
+        sum(10, 20, 30);
+        sum(10, 20, 30, 40, 50);
+
+        // function sum2(num1, ...numbers) {
+        //     console.log(num1);
+        //     console.log(numbers); //배열
+        // }
+        // function sum2(...numbers, num1) {
+        //     console.log(num1);
+        //     console.log(numbers); //배열
+        // }
+        function sum2(num1, num2, num3, ...numbers) {
+            console.log(num1);
+            console.log(numbers); //배열
+        }
+
+        sum2(10, 20);
+        sum2(10, 20, 30);
+        sum2(10, 20, 30, 40, 50);
+
+    </script>
+</body>
+</html>

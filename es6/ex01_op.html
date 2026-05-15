@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- react > es6 > ex01_op.html -->
+    <h1></h1>
+    
+    <script>
+
+        // null 병합 연산자
+        // - 존재하는 값을 추려내는 기능
+        // - null, undefined가 아닌 값을 찾을 때 사용
+        // - n1 ?? n2
+        // - 편의성을 위한 연산자
+
+        let n1;
+        let n2 = 20;
+        let n3 = 30;
+        let n7;
+
+        let n4 = n1 ?? n2; 
+        console.log(n4);
+
+        let n5 = n3 ?? n1;
+        console.log(n5);
+
+        let n6 = n2 ?? n3; // 둘 다 값이 존재하면 첫번째 값을 반환
+        console.log(n6);
+
+        let n8 = n1 ?? n7 // undefined 반환
+        console.log(n8);
+
+        // DB 조회
+        // - 별명을 출력하되 .. 별명이 없는 사람은 이름을 대신 출력
+        let name = '홍길동'; // not null
+        let nick;   // null
+
+        console.log(nick ?? name);
+
+
+
+        // Truty, Falsy
+        // - boolean이 아니더라도, 참/거짓을 평가
+        // - 정수: 0(false), 나머지(true)
+        // - 실수: 0.0(false)
+        // - 문자: ''(false)
+
+
+        
+    </script>
+</body>
+</html>

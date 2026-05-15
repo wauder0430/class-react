@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex07_class.html -->
+    <script>
+
+        //JavaScript Class
+
+        // function Car(name, color) {
+        //     this.name = name;
+        //     this.color = color;
+        // }
+
+        // class Car {
+        //     constructor(name, color) {
+        //         this.name = name;
+        //         this.color = color;
+        //     }
+        // }
+
+        // const c1 = new Car('벤츠', '노랑');
+        // console.log(c1.name, c1.color);
+
+
+
+        // function Car(name, color) {
+        //     this.name = name;
+        //     this.color = color;
+        //     this.drive = function() {}
+        // }
+
+        // class Car {
+        //     constructor(name, color) {
+        //         this.name = name;
+        //         this.color = color;
+        //     }
+        //     drive() {
+        //         return `${this.name} 부릉부릉`;
+        //     }
+        // }
+
+        // const c1 = new Car('벤츠', '파랑');
+        // console.log(c1.drive());
+
+
+
+        //상속
+        class Car {
+            constructor(name, color) {
+                this.name = name;
+                this.color = color;
+            }
+        }
+
+        class SportCar extends Car {
+            constructor(name, color, speed) {
+                super(name, color);
+                this.speed = speed;
+            }
+            cruise() {
+                return `시속 ${this.speed}km로 부릉 부릉`;
+            }
+        }
+
+        const c1 = new SportCar('벤츠', '노랑', 200);
+        console.log(c1.cruise());
+
+    </script>
+</body>
+</html>
