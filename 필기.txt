@@ -1,0 +1,87 @@
+Jquery
+- 데이터 조작 및 DOM 조작을 위한 JavaScript 라이브러리이다.
+
+Jquery UI
+- 사용자 화면(UI)를 만들기 위한 JavaScript 라이브러리이다.
+
+
+React
+- 사용자 화면(UI)를 만들기 위한 JavaScript 라이브러리이다.
+- 컴포넌트 지원 
+    복잡한 화면을 작은 부품으로 나누고,
+    데이터가 바뀌면 화면을 자동으로 다시 그린다.
+- 메타(페이스북) > 2013년
+
+
+
+React 개발 환경
+- 직접 개발 > 관련된 라이브러리(*.js) 참조 + 기본 골격 코드 작성
+- Node.js(NPM == Maven, Gradle):Node.js의 패키지를 관리할 수 있는 도구
+- 빌드 도구 > 
+    - create-react-app: 구형 
+    - vite: 현재 (프로젝트 관리 도구 - 생성/관리/테스트/빌드/실행)
+
+1. node.js 설치
+    - https://nodejs.org
+
+2. vite 설치
+    - $ npm install -g create-vite //요즘엔 이렇게 잘안함
+    - Vite(프랑스어, 비트): 빠른(빛과 같이)
+
+
+Hello World
+- vite 도구 사용 > 리액트 프로젝트 생성하기
+
+프로젝트 생성하기 + 실행하기(테스트 서버)
+- $ npm create vite@latest hello -- --template react
+    - npm <옵션>
+        - npm create vite@loatest hello 
+        - npm에게 전달하는 옵션
+    - --
+        - 구분자
+    - --template react
+        - vite에게 전달하는 옵션
+
+
+프로젝트 접속하기
+- http://localhost:5173
+
+프로젝트 중단하기
+- $ Ctrl + C
+
+프로젝트 다시 실행하기
+- $ cd hello //(프로젝트 경로)
+- $ npm run dev // vite 개발 서버 실행 + 프로젝트 동작
+
+
+Vite + React 프로젝트 표준 구조
+- node_modules > React 관련 / Vite 관련 설치된 패키지(npm이).
+               > 수정 금지
+
+- public > 정적파일(favicon, 로고 이미지 등) 관리
+         > 주로 파일명을 그대로 유지해야 하거나, import하지 않은 파일들
+
+- src > 모든 개발 관련 소스들 
+        - assets > 이미지, 아이콘 등 리소스 관리
+                 > Vite가 번들링하는 대상
+                 > 최적화 대상
+                 > 파일명 해시 추가됨
+        - main.jsx  // 시작점 역할. 랜더링 진입점. React 앱을 시작
+        - index.css // 전역 CSS. 
+
+        - App.jsx // 샘플 페이지
+        - App.css // 샘플 페이지
+
+- index.html > React 앱의 진입점.
+- package.json  > 프로젝트 메타 데이터, 스크립트, 의존성 등
+                > pom.xml(Maven), build.gradle(Gradle)
+- package-lock.json >
+- vite.config.js > Vite 빌드 설정
+
+
+
+
+========================================================================
+수업 예제 프로젝트 생성
+- $ npm create vite@latest basic -- --template react
+
