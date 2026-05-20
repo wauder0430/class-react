@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://bit.ly/3WJ5ilK" />
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- ex13.html -->
+    <h1>텍스트 박스 <small>읽기/쓰기</small></h1>
+
+    <form>
+        <input type="text" id="txt1">
+        <hr>
+        <div id="result"></div>
+        <hr>
+        <input type="button" value="확인" onclick="m1();">
+    </form>
+    
+    <script>
+
+        function m1() {
+
+            // 화면의 변화 > 자바스크립트가 실시간으로 알지 못함
+
+            // 1. 사용자가 텍스트 입력
+            // 2. txt1에 접근
+            // 3. txt1.value
+            // 4. result 접근
+            // 5. result.textContent
+
+            const txt1 = document.getElementById('txt1');
+            document.getElementById('result').textContent = txt1.value;
+        }
+        
+    </script>
+</body>
+</html>
