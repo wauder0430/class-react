@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: project-server
+
+  profiles:
+    active: dev # applicatino-dev.yml
+  
+  # JPA 설정
+  jpa:
+    database: oracle
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernates:
+        format-sql: true
+        highlight_sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        sql: debug
+        orm:
+          jdbc:
+            bind: trace
+  
+  
+    

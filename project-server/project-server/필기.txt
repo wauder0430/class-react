@@ -1,0 +1,88 @@
+워크스페이스 > C:\code\react
+
+프로젝트 생성
+- Generators: Spring Boot
+- Name: "project-server"
+- Language: Java
+- Type: Gradle - Groovy
+- Group: "com.test"
+- Artifact: "project-server"
+- Package name: "com.test.java"
+- JDK: 21
+- Java: 21
+- Packaging: Jar
+- Dependencies:
+    - Spring Web
+    - Oracle Driver
+    - Spring Data JPA
+    - Lombok
+    - Thymeleaf
+    - Spring Boot DevTools
+    - Spring Security
+
+
+
+Project
+- 서버: Spring Boot + REST API
+- 클라이언트: React
+
+Project 업무
+- 인증(회원) > 세션 기반
+- 업무(게시판)
+
+
+기존 스프링 부트 서버 역할 동일 + 인증 처리를 다르게..
+
+1. JDBC + JPA 설정
+- application.yml       //공통 설정
+- application-dev.yml   //개발 시 설정
+- application-prod.yml  //운영 시 설정
+
+2. script.sql
+- tblUser   //회원
+- tblBoard  //게시판
+
+3. 엔티티 + DTO + 리포지토리
+- "com.test.java.entity" > "User.java"
+                         > "Board.java"
+- "com.test.java.repository" > "UserRepository.java"(I)
+                             > "BoardRepository.java"(I)
+- "com.test.java.dto" > "UserDto.java"
+                      > "BoardDto.java"
+
+4. 단위 테스트
+- com.test.java > "DBTests.java"
+
+
+5. 회원 가입
+- com.test.java > "DBTests.java"
+
+
+6. 스프링 시큐리티
+- "com.test.java.config" > "SecurityConfig.java"
+- 리액트의 서버 역할 + 세션 기반
+
+7. 업무 구현
+- "com.test.java.controller" > "MemberController.java"
+
+8. 업무 구현
+- com.test.java.controller > "BoardController.java"
+- 목록보기
+- 글쓰기
+- 상세보기 
+- 삭제하기
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

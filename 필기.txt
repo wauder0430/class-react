@@ -83,5 +83,5 @@ Vite + React 프로젝트 표준 구조
 
 ========================================================================
 수업 예제 프로젝트 생성
-- $ npm create vite@latest basic -- --template react
+- $ npm create vite@latest project-client -- --template react
 

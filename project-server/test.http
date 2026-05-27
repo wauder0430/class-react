@@ -1,0 +1,53 @@
+# test.http
+
+@host = http://localhost:8080
+@memberUsername = hong
+@memberPassword = 1111
+@adminUsername = cat
+@adminPassword = 1111
+
+
+### 1. 시작 페이지 > 익명 + 인증
+GET {{host}}/
+
+
+### 2. 로그인 페이지 > 익명 + 인증
+GET {{host}}/login
+
+
+### 3. 로그인
+POST {{host}}/loginok
+Content-Type: application/json
+
+{
+    "username": "{{memberUsername}}",
+    "password": "{{memberPassword}}"
+}
+
+### 4. 회원 전용 페이지
+GET {{host}}/member
+
+### 5. 로그아웃
+GET {{host}}/logout
+
+### 6. 관리자 전용 페이지
+GET {{host}}/admin
+
+### 7. 게시판 전용 페이지
+GET {{host}}/board/list
+
+### 8. 게시판 글쓰기
+POST {{host}}/board/add
+Content-Type: application/json
+
+{
+    "subject": "제목입니다.",
+    "content": "내용입니다.",
+    "username": "hong"
+}
+
+### 9. 게시판 상세보기
+GET {{host}}/board/view?seq=1
+
+### 10. 게시판 삭제하기
+GET {{host}}/board/delete?seq=3
