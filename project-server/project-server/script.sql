@@ -24,7 +24,7 @@ create table tblBoard (
 drop sequence seqBoard;
 create sequence seqBoard;
 
-
+select * from tblBoard;
 
 
 

@@ -46,7 +46,9 @@ public class Board {
 	@JoinColumn(name = "username", nullable = false)
 	//private String username; //DB 기준으로 FK > JPA에서는 사용 안함
 	private User user; //FK 대신 부모 엔티티를 참조
-
+	
+	
+	
 }
 
 

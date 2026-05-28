@@ -8,6 +8,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -91,6 +92,9 @@ public class BoardController {
 		Authentication authentication
 	) {
 		
+		dto.setUsername(authentication.getName());
+		
+		
 		Board board = dto.toEntity();
 		
 		Board resultBoard = boardRepository.save(board);
@@ -103,6 +107,7 @@ public class BoardController {
 		
 		//return ResponseEntity.ok(result);
 		
+		//201 Created .
 		return ResponseEntity.status(HttpStatus.CREATED).body(result);
 	}
 	
@@ -111,17 +116,17 @@ public class BoardController {
 		
 		Board board = boardRepository.findById(seq).orElse(null);
 		
-		if(board == null) {
+		if (board == null) {
 			
 			Map<String, Object> result = new HashMap<String, Object>();
 			
 			result.put("error", "board not found");
 			result.put("seq", seq);
 			
-			// 404
+			//404
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(result);
-			
 		}
+		
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		
@@ -131,22 +136,21 @@ public class BoardController {
 		return ResponseEntity.ok(result);
 	}
 	
-	@GetMapping("/board/delete")
+	@DeleteMapping("/board/del")
 	public ResponseEntity<Map<String,Object>> delete(@RequestParam("seq") Long seq) {
 		
-		if(!boardRepository.existsById(seq)) {
+		if (!boardRepository.existsById(seq)) {
 			
 			Map<String, Object> result = new HashMap<String, Object>();
 			
 			result.put("error", "board not found");
 			result.put("seq", seq);
 			
-			// 404
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(result);
-			
 		}
 		
 		boardRepository.deleteById(seq);
+		
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		
